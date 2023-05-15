@@ -1,38 +1,23 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Dependencies
+The component depends on the following libraries:
 
-## Getting Started
+react: a JavaScript library for building user interfaces.
+react-chartjs-2: a React wrapper for Chart.js, a popular charting library.
+file-saver: a library for saving files in the browser.
+lottie-react: a library for rendering animations created with Adobe After Effects and exported as JSON files using the Bodymovin plugin.
+framer-motion: a library for creating animations and page transitions in React applications.
+react-mouse-particles: a library for creating interactive mouse particles effects in React applications.
+How it Works
+The component fetches a text file from the remote server using the fetch function and counts the frequency of each word using the split and reduce methods of the String and Array prototypes. The resulting word frequencies are stored in a state variable using the useState hook.
 
-First, run the development server:
+The component uses the Bar component from the react-chartjs-2 library to display the word frequencies in a bar graph. The data object specifies the labels and values for the bar graph, and the options object configures the appearance and behavior of the chart.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+The component also provides an option to export the top 20 word frequencies as a CSV file using the handleExport function and the file-saver library. When the "Export" button is clicked, the function generates a CSV file with the word frequencies and prompts the user to download it.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The JSON animation created using Lottie React is displayed using the Lottie component from the library. The animation file is imported into the component as a JSON object and passed as a prop to the Lottie component.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+The animations and page transitions created using Framer Motion are implemented using various components and hooks from the library. For example, the motion.div component is used to create animated div elements, and the useAnimation and useCycle hooks are used to create animated sequences and loops.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+The mouse particles effect created using react-mouse-particles is implemented using the MouseParticles component from the library. The component is added as a child element to the BarGraph component and configured with various options such as particle size, color, and movement speed.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+License

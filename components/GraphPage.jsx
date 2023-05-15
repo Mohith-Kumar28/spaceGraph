@@ -3,9 +3,11 @@ import astronot from "../anim/astronot.json";
 import space from "../anim/space.json";
 import moon from "../anim/moon.json";
 import BarChart from "./BarChart";
+import PieChart from "./PieChart";
 import Tabs from "./Tabs";
 import Image from 'next/image';
 import Link from "next/Link"
+import LowBarGraph from "./LowBarGraph";
 // import {} from "@heroicons/react/solid"
 
 const GraphPage = () => {
@@ -33,8 +35,11 @@ const GraphPage = () => {
     <div className="lg:flex-grow md:w-1/2 mx-10 flex flex-col md:items-start md:text-left items-center text-center backdrop-blur-md bg-black/20 rounded-md ">
      
 
-{/* <Tabs/> */}
-<BarChart/>
+<Tabs/>
+{/* <BarChart/> */}
+
+{/* <PieChart/> */}
+{/* <LowBarGraph/> */}
      
     </div>
   </div>

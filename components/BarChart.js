@@ -170,7 +170,7 @@ export default function BarGraph() {
 
       <div className="border-2 w-full p-4 rounded-lg flex mt-6">
       <Export handleExport={handleExport}/>
-      <div className="px-8 text-left ">
+      <div className="px-8 text-left text-gray-800">
         Meet the two magnets to<br/> download <span className="font-bold"> CSV file</span> 😉
       </div>
       </div>

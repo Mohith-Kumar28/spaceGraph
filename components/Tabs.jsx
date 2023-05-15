@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Tab } from '@headlessui/react'
-import Histogram from './BarChart'
+import BarChart from './BarChart'
+import LowBarGraph from './LowBarGraph'
 
 
 function classNames(...classes) {
@@ -9,34 +10,26 @@ function classNames(...classes) {
 
 export default function Tabs() {
     let [categories] = useState({
-        Search: [
+        Most: [
           {
             id: 1,
-            component:"Histogram"
+            component:"BarChart"
           },
       
         ],
        
-        Convertor: [
+        Least: [
           {
             id: 2,
       
-            component:"Convertor"
-          }
-        ],
-       
-        Stack: [
-          {
-            id: 3,
-      
-            component:"Stack"
+            component:"LowBarGraph"
           }
         ]
     
       })
 
   return (
-    <div className="w-full max-w-md px-2 py-16 sm:px-0">
+    <div className="w-full  px-2  sm:px-0">
    <Tab.Group>
         <Tab.List className="flex space-x-1 rounded-xl bg-blue-900/20 p-1">
           {Object.keys(categories).map((category) => (
@@ -48,7 +41,7 @@ export default function Tabs() {
                   'ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2',
                   selected
                     ? 'bg-white shadow'
-                    : 'text-blue-100 hover:bg-white/[0.12] hover:text-white'
+                    : 'text-white hover:bg-white/[0.12] hover:text-white'
                 )
               }
             >
@@ -61,12 +54,13 @@ export default function Tabs() {
             <Tab.Panel
               key={idx}
               className={classNames(
-                'rounded-xl bg-white p-3',
+                'rounded-xl bg-white  p-3',
                 'ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2'
               )}
             >
               <ul>
-                { tabs[0].component=="Histogram"&&  <Histogram/>}
+                { tabs[0].component=="BarChart"&&  <BarChart/>}
+                { tabs[0].component=="LowBarGraph"&&  <LowBarGraph/>}
                
                 <div className="w-96"></div>
               </ul>
